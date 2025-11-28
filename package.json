@@ -5,9 +5,9 @@
   "description": "A WhatsApp Bot Created By Qadeer Brahvi",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name lite",
-    "stop": "pm2 stop lite",
-    "restart": "pm2 restart lite"
+    "start": "pm2 start index.js --deep-monitoring --attach --name Qadeer",
+    "stop": "pm2 stop Qadeer",
+    "restart": "pm2 restart Qadeer"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "github:EdderBot02/bail",
