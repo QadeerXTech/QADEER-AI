@@ -26,7 +26,7 @@ ___
 <h1 align="center"> 𝐆𝐞𝐭 𝐒𝐞𝐬𝐬𝐢𝐨𝐧 </h1>
 
 <p align="center">
-  <a href="https://qadeer-md-pairing-1.onrender.com/">
+  <a href="https://qadeerxtech-pair.onrender.com/pair">
     <img src="./Qadeer/get-session-btn.svg" alt="GET SESSION" width="260"/>
   </a>
 </p>
