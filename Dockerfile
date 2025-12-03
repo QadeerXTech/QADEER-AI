@@ -1,30 +1,16 @@
 FROM node:lts-buster
 
-# Root access
-USER root
+# Set working directory
+WORKDIR /app
 
-# Install dependencies (correct & Heroku-compatible)
-RUN apt-get update && \
-    apt-get install -y ffmpeg imagemagick git && \
-    rm -rf /var/lib/apt/lists/*
-
-# Switch to node user
-USER node
-
-# Set working dir
-WORKDIR /home/node/app
-
-# Copy all files
+# Copy all local files to container
 COPY . .
 
 # Install dependencies
-RUN yarn install --network-concurrency 1
+RUN npm install && npm install -g pm2
 
-# Heroku exposes its own port
-ENV PORT=3000
+# Expose the port your app listens on
+EXPOSE 9090
 
-# Production mode
-ENV NODE_ENV=production
-
-# Start bot using PM2
-CMD ["pm2-runtime", "index.js"]
+# Start the app
+CMD ["npm", "start"]
