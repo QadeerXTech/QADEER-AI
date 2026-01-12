@@ -22,6 +22,7 @@
 ╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝░░╚══╝
 CODED BY QADEER-X-TECH, ARSLAN-MD
 HATERS KI MKC
+FUCK YOU COPY CODERS😂
 */
 
 
