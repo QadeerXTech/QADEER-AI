@@ -18,7 +18,7 @@ ___
 <h1 align="center">Fork This Project</h1>
 
 <p align="center">
-  <a href="https://github.com/Qadeer-XTech/QADEER-AI/fork">
+  <a href="https://github.com/QadeerXTech/QADEER-AI/fork">
     <img src="./Qadeer/fork-btn.svg" alt="Fork Repository"/>
   </a>
 </p>
