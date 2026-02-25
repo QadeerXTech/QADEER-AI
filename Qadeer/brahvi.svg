@@ -1,63 +1,218 @@
-
-<svg width="100%" height="100%" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff0055">
-          <animate attributeName="stop-color" values="#ff0055;#ffcc00;#00ff99;#00ccff;#cc00ff;#ff0055" dur="7s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#cc00ff">
-          <animate attributeName="stop-color" values="#cc00ff;#ff0055;#ffcc00;#00ff99;#00ccff;#cc00ff" dur="7s" repeatCount="indefinite"/>
-      </stop>
+
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020b18"/>
+      <stop offset="100%" stop-color="#010a1f"/>
     </linearGradient>
-    
-    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+    <linearGradient id="cyanLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061428"/>
+      <stop offset="100%" stop-color="#030d1e"/>
+    </linearGradient>
+
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4dd9ff"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#00aaff"/>
+    </linearGradient>
+
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#0077ff"/>
+    </linearGradient>
+
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#00e5ff"/>
+      <stop offset="70%" stop-color="#0099ff"/>
+      <stop offset="100%" stop-color="#0077ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#00aaff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00aaff" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="topGlow" cx="50%" cy="0%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="strongGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <clipPath id="card">
+      <rect x="24" y="24" width="552" height="352" rx="20"/>
+    </clipPath>
+
+    <!-- Dot grid pattern -->
+    <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="0.7" fill="#00e5ff" opacity="0.12"/>
+    </pattern>
+
   </defs>
 
-  <rect width="100%" height="100%" fill="#080808"/>
+  <!-- BG -->
+  <rect width="600" height="400" fill="url(#bgGrad)"/>
 
-  <g fill="url(#rainbow)" opacity="0.7">
-    <circle r="1.5" cx="50"><animate attributeName="cy" from="-10" to="410" dur="4s" repeatCount="indefinite" begin="0s"/></circle>
-    <circle r="1" cx="150"><animate attributeName="cy" from="-10" to="410" dur="5s" repeatCount="indefinite" begin="-2s"/></circle>
-    <circle r="2" cx="250"><animate attributeName="cy" from="-10" to="410" dur="3s" repeatCount="indefinite" begin="-1s"/></circle>
-    <circle r="1.5" cx="350"><animate attributeName="cy" from="-10" to="410" dur="6s" repeatCount="indefinite" begin="-3s"/></circle>
-    <circle r="1" cx="450"><animate attributeName="cy" from="-10" to="410" dur="4.5s" repeatCount="indefinite" begin="-0.5s"/></circle>
-    <circle r="2" cx="550"><animate attributeName="cy" from="-10" to="410" dur="5.5s" repeatCount="indefinite" begin="-2.5s"/></circle>
-    <circle r="1" cx="100"><animate attributeName="cy" from="-20" to="420" dur="5.2s" repeatCount="indefinite" begin="-4s"/></circle>
-    <circle r="1.5" cx="200"><animate attributeName="cy" from="-20" to="420" dur="3.8s" repeatCount="indefinite" begin="-1.5s"/></circle>
-    <circle r="2" cx="300"><animate attributeName="cy" from="-20" to="420" dur="4.2s" repeatCount="indefinite" begin="-3.5s"/></circle>
-    <circle r="1" cx="400"><animate attributeName="cy" from="-20" to="420" dur="6.5s" repeatCount="indefinite" begin="-5s"/></circle>
-    <circle r="1.5" cx="500"><animate attributeName="cy" from="-20" to="420" dur="4.8s" repeatCount="indefinite" begin="0s"/></circle>
+  <!-- Top ambient glow -->
+  <ellipse cx="300" cy="0" rx="300" ry="120" fill="url(#topGlow)"/>
+
+  <!-- Card -->
+  <rect x="24" y="24" width="552" height="352" rx="20" fill="url(#cardGrad)"/>
+
+  <!-- Dot grid -->
+  <rect x="24" y="24" width="552" height="352" rx="20" fill="url(#dots)" clip-path="url(#card)"/>
+
+  <!-- Card border -->
+  <rect x="24" y="24" width="552" height="352" rx="20" fill="none" stroke="#00aaff" stroke-width="1.5" opacity="0.6" filter="url(#softGlow)"/>
+
+  <!-- Thin inner border -->
+  <rect x="30" y="30" width="540" height="340" rx="17" fill="none" stroke="#00e5ff" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Corner accents — top left -->
+  <g fill="none" stroke="#00e5ff" stroke-width="2" filter="url(#glow)" opacity="0.9">
+    <polyline points="24,65 24,28 61,28"/>
+    <polyline points="539,28 576,28 576,65"/>
+    <polyline points="24,335 24,372 61,372"/>
+    <polyline points="539,372 576,372 576,335"/>
+  </g>
+  <!-- Corner dots -->
+  <g fill="#00e5ff" filter="url(#glow)" opacity="0.9">
+    <circle cx="24" cy="28" r="3"/>
+    <circle cx="576" cy="28" r="3"/>
+    <circle cx="24" cy="372" r="3"/>
+    <circle cx="576" cy="372" r="3"/>
   </g>
 
-  <g filter="url(#neonGlow)">
-    <rect x="10" y="10" width="580" height="380" rx="20" stroke="url(#rainbow)" stroke-width="4" fill="transparent">
-      <animate attributeName="stroke-dasharray" values="50,20;10,30;50,20" dur="4s" repeatCount="indefinite"/>
-    </rect>
+  <!-- Top horizontal line -->
+  <line x1="80" y1="62" x2="520" y2="62" stroke="url(#cyanLine)" stroke-width="1" opacity="0.5"/>
 
-    <rect x="50" y="40" width="500" height="320" rx="20" fill="#1118" stroke="#fff2" stroke-width="1.5"/>
+  <!-- Header label left -->
+  <text x="44" y="57" font-size="9" font-family="'Courier New', monospace" fill="#00aaff" opacity="0.7" letter-spacing="2">SYS.ONLINE</text>
+  <!-- Header label right -->
+  <text x="556" y="57" text-anchor="end" font-size="9" font-family="'Courier New', monospace" fill="#00aaff" opacity="0.7" letter-spacing="2">v2.0.25</text>
 
-    <text x="50%" y="100" text-anchor="middle" font-size="44" font-weight="bold" font-family="'Segoe UI', 'Arial', sans-serif" fill="url(#rainbow)">
-      💻 QADEER-AI 🤖
-      <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="4s" repeatCount="indefinite"/>
-    </text>
+  <!-- Center ambient glow -->
+  <ellipse cx="300" cy="210" rx="160" ry="120" fill="url(#centerGlow)"/>
 
-    <rect x="250" y="160" width="100" height="100" rx="10" fill="none" stroke="url(#rainbow)" stroke-width="3">
-       <animateTransform attributeName="transform" type="rotate" from="0 300 210" to="360 300 210" dur="15s" linear="linear" repeatCount="indefinite" />
-    </rect>
-    
-    <text x="300" y="220" text-anchor="middle" font-size="50" font-weight="bold" font-family="'Courier New', monospace" fill="url(#rainbow)">
-      AI
-      <animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite"/>
-    </text>
+  <!-- Outer ring (slow rotate) -->
+  <circle cx="300" cy="210" r="105" fill="none" stroke="#00aaff" stroke-width="1" stroke-dasharray="6 8" opacity="0.4">
+    <animateTransform attributeName="transform" type="rotate" from="0 300 210" to="360 300 210" dur="20s" repeatCount="indefinite"/>
+  </circle>
 
-    <text x="50%" y="360" text-anchor="middle" font-size="20" font-family="'Segoe UI', 'Verdana', sans-serif" fill="url(#rainbow)">
-      ✦ Created by Qadeer Brahvi ✦
-    </text>
+  <!-- Middle ring (counter rotate) -->
+  <circle cx="300" cy="210" r="82" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="3 12" opacity="0.5">
+    <animateTransform attributeName="transform" type="rotate" from="360 300 210" to="0 300 210" dur="14s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Inner solid ring -->
+  <circle cx="300" cy="210" r="62" fill="none" stroke="#0066cc" stroke-width="1" opacity="0.6"/>
+
+  <!-- Inner circle bg -->
+  <circle cx="300" cy="210" r="60" fill="#020e22" opacity="0.95"/>
+
+  <!-- Orbit dot -->
+  <g filter="url(#glow)">
+    <circle r="5" fill="#00e5ff">
+      <animateMotion dur="4s" repeatCount="indefinite">
+        <mpath href="#orbit1"/>
+      </animateMotion>
+    </circle>
+    <circle r="3" fill="#ffffff" opacity="0.8">
+      <animateMotion dur="4s" begin="-2s" repeatCount="indefinite">
+        <mpath href="#orbit1"/>
+      </animateMotion>
+    </circle>
   </g>
+  <path id="orbit1" d="M300,128 A82,82 0 1,1 299.9,128Z" fill="none"/>
+
+  <!-- AI text -->
+  <text x="300" y="230" text-anchor="middle" font-size="64" font-weight="900"
+    font-family="'Courier New', monospace" fill="url(#aiGrad)" filter="url(#strongGlow)" letter-spacing="6" opacity="0.95">
+    AI
+  </text>
+  <!-- AI text sharp on top -->
+  <text x="300" y="230" text-anchor="middle" font-size="64" font-weight="900"
+    font-family="'Courier New', monospace" fill="url(#aiGrad)" letter-spacing="6">
+    AI
+    <animate attributeName="opacity" values="1;0.85;1" dur="3s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Tick marks on outer ring -->
+  <g stroke="#00e5ff" stroke-width="1" opacity="0.35">
+    <line x1="300" y1="105" x2="300" y2="112"/>
+    <line x1="300" y1="308" x2="300" y2="315"/>
+    <line x1="195" y1="210" x2="202" y2="210"/>
+    <line x1="398" y1="210" x2="405" y2="210"/>
+    <line x1="226" y1="136" x2="231" y2="141"/>
+    <line x1="369" y1="279" x2="374" y2="284"/>
+    <line x1="226" y1="284" x2="231" y2="279"/>
+    <line x1="369" y1="141" x2="374" y2="136"/>
+  </g>
+
+  <!-- Main title -->
+  <text x="300" y="104" text-anchor="middle" font-size="36" font-weight="800"
+    font-family="'Courier New', monospace" fill="url(#titleGrad)" filter="url(#softGlow)" letter-spacing="8">
+    QADEER-AI
+  </text>
+
+  <!-- Underline glow under title -->
+  <line x1="140" y1="112" x2="460" y2="112" stroke="url(#cyanLine)" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Bottom divider -->
+  <line x1="60" y1="340" x2="540" y2="340" stroke="url(#cyanLine)" stroke-width="1" opacity="0.4"/>
+
+  <!-- Status dots -->
+  <g filter="url(#glow)">
+    <circle cx="80" cy="360" r="4" fill="#00e5ff">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="96" cy="360" r="4" fill="#00aaff">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" begin="-0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="112" cy="360" r="4" fill="#0077ff">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" begin="-1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Animated scan bar -->
+  <rect x="130" y="353" width="0" height="14" rx="7" fill="url(#barGrad)" opacity="0.7">
+    <animate attributeName="width" values="0;380;380;0" dur="3.5s" repeatCount="indefinite" keyTimes="0;0.5;0.8;1"/>
+    <animate attributeName="opacity" values="0;0.8;0.4;0" dur="3.5s" repeatCount="indefinite" keyTimes="0;0.5;0.8;1"/>
+  </rect>
+
+  <!-- Bottom text -->
+  <text x="300" y="364" text-anchor="middle" font-size="11" font-weight="600"
+    font-family="'Courier New', monospace" fill="#4dd9ff" letter-spacing="4" opacity="0.85">
+    CREATED BY QADEER BRAHVI
+  </text>
+
+  <!-- Side data labels -->
+  <g font-family="'Courier New', monospace" font-size="8" fill="#00aaff" opacity="0.45" letter-spacing="1">
+    <text x="38" y="160" transform="rotate(-90 38 160)">NEURAL.NET</text>
+    <text x="38" y="270" transform="rotate(-90 38 270)">ACTIVE</text>
+    <text x="562" y="160" transform="rotate(90 562 160)">SYS.CORE</text>
+    <text x="562" y="270" transform="rotate(90 562 270)">ONLINE</text>
+  </g>
+
 </svg>
